@@ -22,8 +22,7 @@ express.set("view engine", "ejs");
 express.use(bodyparser.urlencoded({ extended: true }));
 
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://harish:harish16@ds131697.mlab.com:31697/yelpcamp", { useMongoClient: true })
-    //mongoose.connect("mongodb://localhost/yelpcamp", { useMongoClient: true });
+mongoose.connect("mongodb://localhost:27017/yelpcamp", { useMongoClient: true , useNewUrlParser: true });
 express.use(require("express").static("public"));
 express.use(methodOverride("_method"));
 express.use(flash());
